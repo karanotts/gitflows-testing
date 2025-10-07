@@ -1,6 +1,7 @@
 name: Create Semantic Release
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
 
@@ -8,6 +9,8 @@ jobs:
   create-release:
     name: Create Semantic Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
